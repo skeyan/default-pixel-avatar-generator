@@ -1,3 +1,4 @@
+import os
 from PIL import Image, ImageDraw, ImageFont
 import random
 import textwrap
@@ -101,7 +102,15 @@ def main(name = 'image', palette = 'purple drank', size = (500, 500), pixel = 20
         background(im, W, H, pixel, palette)
 
     draw_text(im, msg, fontsize, palette, W, H)
-    im.save(f"{name}.png", "PNG")
+
+    # Create the /results directory if it doesn't exist
+    results_folder = "results"
+    if not os.path.exists(results_folder):
+        os.makedirs(results_folder)
+
+    filepath = os.path.join(results_folder, f"{name}.png")
+    im.save(filepath, "PNG")
+    print(f"Image saved to: {filepath}")
 
 if __name__ == '__main__':
     main()
