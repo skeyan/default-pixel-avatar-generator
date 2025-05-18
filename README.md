@@ -1,5 +1,35 @@
 # default-pixel-avatar-generator
 
+Note: This fork updates the original repo to be compatible with the newest version of the Python Pillow library.
+
+This Python script uses the Pillow (PIL Fork) library to generate pixel art style images with customizable backgrounds and text overlays.
+
+## Features
+
+* **Multiple Color Palettes:** Includes a variety of predefined color palettes to choose from.
+* **Random Pixel Backgrounds:** Creates a background by randomly selecting colors from the chosen palette for each pixel block.
+* **Rainbow Background Option:** Generates a background with color gradients based on the chosen palette.
+* **Text Overlay:** Allows you to add text to the generated image with customizable font size and color (using the last color in the selected palette).
+* **Text Wrapping:** Automatically wraps long text to fit within the image width.
+* **Customizable Image Size and Pixel Size:** Control the dimensions of the output image and the size of the individual pixel blocks.
+* **Output to `/results` Folder:** Saves the generated images in a dedicated `results` folder within the script's directory.
+
+## Requirements
+
+* **Python 3.x**
+* **Pillow Library:** Install using pip:
+    ```bash
+    pip install Pillow
+    ```
+* **(Optional) Helvetica-Bold Font:** The script attempts to use "fonts/Helvetica-Bold.ttf" for text. If this font is not found, it will fall back to a default Pillow font. You can create a `fonts` directory in the same location as the script and place a `.ttf` font file named `Helvetica-Bold.ttf` there, or modify the `draw_text` function to use a different font path.
+
+```
+    To generate images with specific parameters, you can modify the `your_script.py` file.
+
+    This will generate an image named `image.png` in the `results` folder. It will override any prexeisting images by the same name.
+```
+
+---
 <p align="center">
   <img src="https://raw.githubusercontent.com/vladlenomg/default-pixel-avatar-generator/master/screenshots/g.png" height="250" width="250"/>
   <img src="https://raw.githubusercontent.com/vladlenomg/default-pixel-avatar-generator/master/screenshots/i.png" height="250" width="250"/>
